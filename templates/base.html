@@ -4,12 +4,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Django Store</title>
+    <title>Django Store | {% block title%}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/Styles.css' %}">
 </head>
 <body>
-    <h1>Bienvenido a Django Store</h1>
-
     {% block content %}
     {% endblock %}
 </body>
