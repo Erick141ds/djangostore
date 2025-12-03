@@ -1,8 +1,15 @@
 {% extends "base.html" %}
 
-{%block title%%}Home{%endblock%}
+{% block title %}Home{% endblock %}
 
 {% block content %}
     <h2>Welcome to django store</h2>
-    <p>Your one-shop for all things django</p>
-{%endblock%}
+    {% for p in products %}
+        <div class="product">
+            <h2>{{ p.name }}</h2>
+            <p>Price: ${{ p.price }}</p>
+            <p>Price: ${{ p.description }}</p>
+            <img src="{{ p.image.url }}" alt="" width="200px">
+        </div>
+    {%  endfor %}
+{% endblock %}

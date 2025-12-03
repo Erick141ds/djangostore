@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="{% static 'css/Styles.css' %}">
 </head>
 <body>
+    {% if user.is_authenticated %}
+    <h3>Bienvenido {{ user }}</h3>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="salir">
+    </form>
+    {% else %}
+    <a href="{% url 'home:register' %}"> Entrar </a> 
+    <a href="{% url 'logout' %}"> Entrar </a> 
+    {% endif %}
     {% block content %}
     {% endblock %}
 </body>
